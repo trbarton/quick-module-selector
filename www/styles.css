@@ -1,0 +1,16 @@
+.mdl-card {
+    min-height: 120px;
+    margin: 0 auto;
+}
+
+.mdl-layout__header-row {
+    padding: 0 16px 0 16px;
+}
+
+.mdl-layout-title {
+    margin: 0 auto;
+}
+
+.mdl-card__supporting-text {
+    padding-top: 0px;
+}
