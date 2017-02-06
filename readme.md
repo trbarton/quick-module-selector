@@ -8,3 +8,5 @@
     (You can add as many button links as you would like)
 
 3. Run "gcloud app deploy" in your project folder
+
+*Demo @ quickmoduleselector.appspot.com
