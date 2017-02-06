@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="modules">
 <head>
   <title>Quick Module Selector</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 
   <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -27,7 +30,7 @@
   <meta name="theme-color" content="#ffffff">
 
 </head>
-<body>
+<body ng-controller="AppController as AppCt">
 
 <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -38,52 +41,20 @@
     </div>
   </header>
   <main class="mdl-layout__content">
-    <div class="page-content">
+    <div class="page-content" ng-cloak>
       <!-- Your content goes here -->
 
-      <div class="mdl-cell mdl-cell--12-col">
+      <div class="mdl-cell mdl-cell--12-col" ng-repeat="module in modules">
         <div class="mdl-card mdl-shadow--2dp">
           <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text">Secure Systems</h2>
+            <h2 class="mdl-card__title-text">{{ module['mod_name'] }}</h2>
           </div>
           <div class="mdl-card__supporting-text">
-            COMP 3217
+            {{ module['mod_code'] }}
           </div>
           <div class="mdl-card__actions mdl-card--border">
-            <button id="jsSsNotesButton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-              Timetable/Notes
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="mdl-cell mdl-cell--12-col">
-        <div class="mdl-card mdl-shadow--2dp">
-          <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text">Advanced Databases</h2>
-          </div>
-          <div class="mdl-card__supporting-text">
-            COMP 3211
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <button id="jsDbNotesButton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-              Timetable/Notes
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="mdl-cell mdl-cell--12-col">
-        <div class="mdl-card mdl-shadow--2dp">
-          <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text">Part III Project</h2>
-          </div>
-          <div class="mdl-card__supporting-text">
-            COMP 3200
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <button id="jsP3pNotesButton"class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-              Notes
+            <button id="jsSsNotesButton" ng-repeat="(key, value) in module['links']" ng-click="redirect(value)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              {{ key }}
             </button>
           </div>
         </div>

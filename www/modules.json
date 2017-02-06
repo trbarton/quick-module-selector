@@ -1,0 +1,23 @@
+[
+  {
+    "mod_name": "Secure Systems",
+    "mod_code": "COMP 3217",
+    "links": {
+      "Timetable/Notes": "https://secure.ecs.soton.ac.uk/noteswiki/w/COMP3217"
+    }
+  },
+  {
+    "mod_name": "Advanced Databases",
+    "mod_code": "COMP 3211",
+    "links": {
+      "Timetable/Notes": "https://secure.ecs.soton.ac.uk/noteswiki/w/COMP3211"
+    }
+  },
+  {
+    "mod_name": "Part III Project",
+    "mod_code": "COMP 3200",
+    "links": {
+      "Notes": "https://secure.ecs.soton.ac.uk/module/1617/COMP3200/33192/"
+    }
+  }
+]

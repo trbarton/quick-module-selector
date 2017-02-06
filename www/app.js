@@ -1,17 +1,15 @@
-/**
- * Created by tombarton on 06/02/2017.
- */
-$(document).ready(function () {
+angular.module('modules', [])
+  .controller('AppController', function ($http, $scope, $window, $location) {
+    $http.get('modules.json').then(function (res) {
+      $scope.modules = res.data;
+    });
 
-  $('#jsSsNotesButton').click(function () {
-    location.href = "https://secure.ecs.soton.ac.uk/noteswiki/w/COMP3217";
+    $scope.redirect = function(url, refresh) {
+      if(refresh || $scope.$$phase) {
+        $window.location.href = url;
+      } else {
+        $location.path(url);
+        $scope.$apply();
+      }
+    }
   });
-
-  $('#jsDbNotesButton').click(function () {
-    location.href = "https://secure.ecs.soton.ac.uk/noteswiki/w/COMP3211";
-  });
-
-  $('#jsP3pNotesButton').click(function () {
-    location.href = "https://secure.ecs.soton.ac.uk/module/1617/COMP3200/33192/";
-  });
-});

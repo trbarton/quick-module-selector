@@ -14,3 +14,7 @@
 .mdl-card__supporting-text {
     padding-top: 0px;
 }
+
+.mdl-button {
+    margin: 5px;
+}
