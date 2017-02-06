@@ -1,4 +1,4 @@
-** ECS Quick Module Menu**
+** ECS Quick Module Selector**
 
 **Usage:**
 
