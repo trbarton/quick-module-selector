@@ -1,4 +1,8 @@
-** ECS Quick Module Selector**
+# ECS Quick Module Selector
+
+A super simple tool for accessing university module hompages quickly and easily.
+Change the contents each semester with a simple json file.
+Deployed to Google app engine.
 
 **Usage:**
 
@@ -9,4 +13,4 @@
 
 3. Run "gcloud app deploy" in your project folder
 
-*Demo @ quickmoduleselector.appspot.com
+### Demo: http://quickmoduleselector.appspot.com/
